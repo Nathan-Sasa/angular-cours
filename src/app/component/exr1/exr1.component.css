@@ -1,4 +1,4 @@
-/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
+@import 'bootstrap/dist/css/bootstrap.min.css';
 /* @import 'material-icons/iconfont/material-icons.css'; */
 
 *{
@@ -115,7 +115,7 @@ img:hover{
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    /* position: absolute; */
-    /* bottom: 15px; */
-    /* right: 15px; */
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
 }
