@@ -30,6 +30,9 @@
             </div>
         </div>
     </div>
+    <div class="alert alert-primary" *ngIf="!!receivedRating">
+        {{receivedRating}}
+    </div>
     <ul>
         <li *ngFor="let product of filterOfProducts">
             <h4>{{ product.name}}</h4>
@@ -42,6 +45,7 @@
             <p class="card-text">
                 Prix: {{ product.price | currency : 'EUR': 'symbol': '1.2-2' : 'fr' | replaceComma: '.'}}
             </p>
+            <app-star-rating [rating]="product.rating" (starRatingClicked)="receiveRatingClick($event)"></app-star-rating>
             <span class="isNewProduct" *ngIf="showBadge">Nouveau</span>
         </li>
     </ul>

@@ -4,7 +4,7 @@ import { Exr1Component } from "./component/exr1/exr1.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Exr1Component],
+  imports: [Exr1Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
