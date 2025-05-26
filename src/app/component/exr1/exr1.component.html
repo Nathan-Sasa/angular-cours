@@ -1,0 +1,48 @@
+<div class="container">
+    <h3>Products</h3>
+    <p>
+        Créer un composant qui affiche une liste de produits. Chaque produit
+        doit avoir un nom, une description et un prix. Utiliser des données
+        fictives pour remplir la liste.
+    </p>
+    <button class="btn btn-primary d-flex" (click)="toggleBadge()">
+        <span class="material-icons">
+            {{showBadge ? 'visibility_off' : 'visibility'}}
+        </span>
+        <span class="ml-2">
+            {{showBadge ? 'cacher ' : 'afficher nouveau'}}
+        </span>
+    </button>
+    
+    <div class="my-2">
+        <div class="d-flex">
+            <div class="col-md-4">
+                <span class="material-icons"></span>
+                <span class="spanFilter">Filtre actuel: </span>
+                <!-- <br> -->
+                <b class="filterText">{{productFilter | titlecase}}</b>
+            </div>
+            <div class="col-md-8 form-group">
+                <input type="text" class="form-control" placeholder="Rechercher un produit"
+                       [(ngModel)]="productFilter"/>
+                <!-- <input type="text" class="form-control" placeholder="Rechercher un produit"
+                       [ngModel]="filterProducts" (ngModelChange)="filterProducts = $event"/> -->
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li *ngFor="let product of filterOfProducts">
+            <h4>{{ product.name}}</h4>
+            <article>
+                <img [src]="product.image" [title]="product.name | uppercase " [alt]="product.name" />
+            </article>
+            <p class="card-text">
+                {{ product.description }}
+            </p>
+            <p class="card-text">
+                Prix: {{ product.price | currency : 'EUR': 'symbol': '1.2-2' : 'fr' | replaceComma}}
+            </p>
+            <span class="isNewProduct" *ngIf="showBadge">Nouveau</span>
+        </li>
+    </ul>
+</div>

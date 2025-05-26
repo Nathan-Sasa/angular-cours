@@ -1,0 +1,11 @@
+/* @import "-bootstrap/scss/bootstrap"; */
+
+main{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+h1{
+  /* background: #000; */
+}
