@@ -115,7 +115,7 @@ img:hover{
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
+    /* position: absolute; */
+    /* bottom: 15px; */
+    /* right: 15px; */
 }

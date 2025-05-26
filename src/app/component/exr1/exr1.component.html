@@ -40,7 +40,7 @@
                 {{ product.description }}
             </p>
             <p class="card-text">
-                Prix: {{ product.price | currency : 'EUR': 'symbol': '1.2-2' : 'fr' | replaceComma}}
+                Prix: {{ product.price | currency : 'EUR': 'symbol': '1.2-2' : 'fr' | replaceComma: '.'}}
             </p>
             <span class="isNewProduct" *ngIf="showBadge">Nouveau</span>
         </li>
