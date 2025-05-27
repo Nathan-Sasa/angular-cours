@@ -3,5 +3,9 @@
 @import 'material-icons/iconfont/material-icons.css';
 
 body{
-    --bs-body-bg: var(--bs-gray-100);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }

@@ -16,7 +16,7 @@
     
     <div class="my-2">
         <div class="d-flex">
-            <div class="col-md-4">
+            <div class="col-md-4 pt-2">
                 <span class="material-icons"></span>
                 <span class="spanFilter">Filtre actuel: </span>
                 <!-- <br> -->
@@ -45,7 +45,13 @@
             <p class="card-text">
                 Prix: {{ product.price | currency : 'EUR': 'symbol': '1.2-2' : 'fr' | replaceComma: '.'}}
             </p>
-            <app-star-rating [rating]="product.rating" (starRatingClicked)="receiveRatingClick($event)"></app-star-rating>
+            <div class="icon-container d-flex justify-content-between align-items-baseline">
+                <app-star-rating [rating]="product.rating" (starRatingClicked)="receiveRatingClick($event)"></app-star-rating>
+
+                <span class="material-icons bg-info text-white p-2 rounded-circle btn-primary" [routerLink]="['/products', product.productId]">
+                    keyboard_arrow_right
+                </span>
+            </div>
             <span class="isNewProduct" *ngIf="showBadge">Nouveau</span>
         </li>
     </ul>

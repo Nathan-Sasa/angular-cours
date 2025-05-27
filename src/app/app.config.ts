@@ -30,7 +30,6 @@ const routes: Routes = [
 ]
 
 export const appConfig: ApplicationConfig = {
-
     providers: [
         provideZoneChangeDetection({ eventCoalescing: true }), 
         provideRouter(routes),
