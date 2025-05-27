@@ -1,5 +1,5 @@
-<div class="container">
-    <h3>Products</h3>
+<div class="container mt-3">
+    <!-- <h3>{{title}}</h3> -->
     <p>
         Créer un composant qui affiche une liste de produits. Chaque produit
         doit avoir un nom, une description et un prix. Utiliser des données
@@ -34,7 +34,7 @@
         {{receivedRating}}
     </div>
     <ul>
-        <li *ngFor="let product of filterOfProducts">
+        <li *ngFor="let product of filterOfProducts ">
             <h4>{{ product.name}}</h4>
             <article>
                 <img [src]="product.image" [title]="product.name | uppercase " [alt]="product.name" />
