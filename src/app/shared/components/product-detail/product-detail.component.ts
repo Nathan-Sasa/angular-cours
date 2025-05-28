@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ProductServices } from '../../../component/exr1/exr1.service';
 import { IProduct } from '../../../component/exr1/exr1';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule, NgIf } from '@angular/common';
+import { pipe } from 'rxjs';
+import { ReplaceCommaPipe } from '../../pipes/replace-comma.pipe';
+import { StarRatingComponent } from '../star-rating.component/star-rating/star-rating.component';
 
 @Component({
     selector: 'app-product-detail',
-    imports: [RouterModule],
+    imports: [RouterModule, HttpClientModule, NgIf, ReplaceCommaPipe, StarRatingComponent, CommonModule],
     standalone: true,
     templateUrl: './product-detail.component.html',
     styleUrl: './product-detail.component.css',
 })
-export class ProductDetailComponent {
+export class ProductDetailComponent implements OnInit {
     public product: IProduct = <IProduct>{};
+    // public product?: IProduct ;
 
     constructor(
         private route: ActivatedRoute,
@@ -20,27 +26,20 @@ export class ProductDetailComponent {
     ) {}
 
     ngOnInit(): void {
-        // const id = +this.route.snapshot.paramMap.get('id');
-
-        // console.log('id', id);
 
         const idParam = this.route.snapshot.paramMap.get('id');
-        if (idParam !== null) {
-            const id = +idParam;
-            console.log('id', id);
-
-            this.productService.getProducts().subscribe((products: IProduct[]) =>{
-                this.product = products.find(product => product.productId === id)
-
-                console.log('products', this.product);
-            })
+        const id = idParam ? +idParam : 0;
 
 
-        } else {
-            console.log(
-                "Aucun ID de produit trouvé dans les paramètres de l'URL."
-            );
-        }
+        this.productService.getProducts().subscribe((products: IProduct[]) => {
+            this.product = products.find(p => p.productId === id)|| <IProduct>{} as IProduct;
+            // console.log();
+            // console.log(this.product);
+
+            if (!this.product){
+                console.log(`Produit avec l'ID ${id} introuvable`);
+            }
+        })
     }
 }
 
@@ -51,4 +50,4 @@ export class ProductDetailComponent {
 // }
 // else {
 //     console.error("Produit non trouver avec l'id :", id);
-// }
+

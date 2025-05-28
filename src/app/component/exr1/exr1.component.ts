@@ -14,13 +14,13 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-exr1',
   imports: [
-    NgFor, 
-    NgIf, 
-    FormsModule, 
-    CommonModule, 
-    ReplaceCommaPipe, 
-    StarRatingComponent, 
-    HttpClientModule, 
+    NgFor,
+    NgIf,
+    FormsModule,
+    CommonModule,
+    ReplaceCommaPipe,
+    StarRatingComponent,
+    HttpClientModule,
     RouterModule
 ],
   standalone: true,
@@ -88,7 +88,7 @@ export class Exr1Component implements OnInit {
         );
         return res;
     }
-        
+
     public receiveRatingClick(message: string): void{
         this.receivedRating = message;
     }
