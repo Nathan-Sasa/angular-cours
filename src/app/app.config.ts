@@ -9,6 +9,7 @@ import { HomeComponent } from './shared/components/home/home.component';
 import { ProductDetailComponent } from './shared/components/product-detail/product-detail.component';
 import { Exr1Component } from './component/exr1/exr1.component';
 import { provideHttpClient } from '@angular/common/http';
+import { productDetailGuard } from './shared/components/product-detail/product-detail.guard';
 // import { routes } from './app.routes';
 // import { Router } from '@angular/router';
 
@@ -27,7 +28,10 @@ registerLocaleData(localeFr)
 const routes: Routes = [
     {path: 'home', component : HomeComponent},
     {path: '', redirectTo: 'home', pathMatch : 'full'},
-    {path: 'products/:id', component: ProductDetailComponent},
+    {
+        path: 'products/:id', component: ProductDetailComponent,
+        canActivate: [productDetailGuard]
+    },
     {path: 'products', component: Exr1Component},
     {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ]

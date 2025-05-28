@@ -1,11 +1,10 @@
-import { Component, OnInit, Pipe } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ProductServices } from '../../../component/exr1/exr1.service';
 import { IProduct } from '../../../component/exr1/exr1';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, NgIf } from '@angular/common';
-import { pipe } from 'rxjs';
 import { ReplaceCommaPipe } from '../../pipes/replace-comma.pipe';
 import { StarRatingComponent } from '../star-rating.component/star-rating/star-rating.component';
 
@@ -22,7 +21,8 @@ export class ProductDetailComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private productService: ProductServices
+        private productService: ProductServices,
+        private router: Router
     ) {}
 
     ngOnInit(): void {
@@ -40,6 +40,9 @@ export class ProductDetailComponent implements OnInit {
                 console.log(`Produit avec l'ID ${id} introuvable`);
             }
         })
+    }
+    public backToList():void{
+        this.router.navigate(['/products']);
     }
 }
 

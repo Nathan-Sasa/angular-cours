@@ -40,7 +40,16 @@
                         [alt]="product.name"
                         class="img-fluid"
                     />
+                </div>
             </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-outline-info d-flex" (click)="backToList()">
+            <!-- [routerLink]="['/products']" -->
+
+                <span class="material-icons">keyboard_arrow_left</span>
+                <span class="ml-2">Retour à la liste</span>
+            </button>
         </div>
     </div>
 </div>
