@@ -18,6 +18,6 @@ span{
 .star-wrapper{
     min-width: 125px;
     display: flex;
-    flex-wrap: nowrap;
-    cursor: pointer;
+    /* flex-wrap: nowrap; */
+    /* cursor: pointer; */
 }

@@ -1,5 +1,5 @@
 import { ApplicationConfig, LOCALE_ID, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, Routes} from '@angular/router';
+import { provideRouter, RouterModule, Routes} from '@angular/router';
 
 
 // import { routes } from './app.routes';
@@ -8,6 +8,7 @@ import localeFr from '@angular/common/locales/fr'
 import { HomeComponent } from './shared/components/home/home.component';
 import { ProductDetailComponent } from './shared/components/product-detail/product-detail.component';
 import { Exr1Component } from './component/exr1/exr1.component';
+// import { routes } from './app.routes';
 // import { Router } from '@angular/router';
 
 registerLocaleData(localeFr)
@@ -15,7 +16,7 @@ registerLocaleData(localeFr)
 // RouterModule.forRoot([
 //     {path: 'home', component : HomeComponent},
 //     {path: '', redirectTo: 'home', pathMatch : 'full'},
-//     {path: 'products/id', component: ProductDetailComponent},
+//     {path: 'products/:id', component: ProductDetailComponent},
 //     {path: 'products', component: Exr1Component},
 //     {path: '**', redirectTo: 'home', pathMatch: 'full'}
 // ])
@@ -24,7 +25,7 @@ registerLocaleData(localeFr)
 const routes: Routes = [
     {path: 'home', component : HomeComponent},
     {path: '', redirectTo: 'home', pathMatch : 'full'},
-    {path: 'products/id', component: ProductDetailComponent},
+    {path: 'products/:id', component: ProductDetailComponent},
     {path: 'products', component: Exr1Component},
     {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ]

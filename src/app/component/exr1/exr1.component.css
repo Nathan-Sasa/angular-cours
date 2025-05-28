@@ -124,5 +124,8 @@ img:hover{
     justify-content: space-between;
     /* border: 1px solid; */
     width: 100%;
+    /* cursor: pointer; */
+}
+.link-btn{
     cursor: pointer;
 }
