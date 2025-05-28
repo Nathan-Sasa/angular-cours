@@ -17,7 +17,6 @@ import { StarRatingComponent } from '../star-rating.component/star-rating/star-r
 })
 export class ProductDetailComponent implements OnInit {
     public product: IProduct = <IProduct>{};
-    // public product?: IProduct ;
 
     constructor(
         private route: ActivatedRoute,
@@ -26,16 +25,11 @@ export class ProductDetailComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-
         const idParam = this.route.snapshot.paramMap.get('id');
         const id = idParam ? +idParam : 0;
 
-
         this.productService.getProducts().subscribe((products: IProduct[]) => {
             this.product = products.find(p => p.productId === id)|| <IProduct>{} as IProduct;
-            // console.log();
-            // console.log(this.product);
-
             if (!this.product){
                 console.log(`Produit avec l'ID ${id} introuvable`);
             }

@@ -3,9 +3,7 @@ import { IProduct } from "./exr1"
 import { HttpClient, HttpClientModule, HttpErrorResponse } from "@angular/common/http"
 import { Observable, throwError } from "rxjs";
 import { catchError, tap} from "rxjs/operators";
-// import { Observable } from "rxjs";
 
-// HttpClientModule
 @Injectable({
     providedIn: 'root'
 })

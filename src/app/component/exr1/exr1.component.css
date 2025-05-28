@@ -1,5 +1,4 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
-/* @import 'material-icons/iconfont/material-icons.css'; */
 
 *{
     margin: 0;
@@ -34,7 +33,6 @@ p{
     font-size: 1rem;
     font-family: 'century gothic', sans-serif;
     font-weight: 100;
-
  }
  .filterText{
     font-size: 1rem;
@@ -46,24 +44,19 @@ ul{
     display: flex;
     width: 100%;
     height: auto;
-    /* border: 1px solid black; */
     padding: 20px 20px;
     list-style: none;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: start;
     gap: 10px;
-    /* overflow-y: scroll; */
-    /* overflow-x: hidden; */
     border-radius: 10px;
-    /* background: #f0f0f0; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
 }
 li{
     width: 250px;
     height:350px;
-    /* border: 1px solid black; */
     border-radius: 10px;
     background: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.103);
@@ -72,7 +65,6 @@ li{
     align-items: start;
     padding: 10px;
     flex-direction: column;
-    /* cursor: pointer; */
     position: relative;
 }
 article{
@@ -98,6 +90,7 @@ img{
     object-fit: cover;
     object-position: center;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 img:hover{
     transform: scale(1.2);
@@ -122,9 +115,7 @@ img:hover{
 .icon-container{
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid; */
     width: 100%;
-    /* cursor: pointer; */
 }
 .link-btn{
     cursor: pointer;

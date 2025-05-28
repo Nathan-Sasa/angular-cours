@@ -25,8 +25,6 @@
             <div class="col-md-8 form-group">
                 <input type="text" class="form-control" placeholder="Rechercher un produit"
                        [(ngModel)]="productFilter"/>
-                <!-- <input type="text" class="form-control" placeholder="Rechercher un produit"
-                       [ngModel]="filterProducts" (ngModelChange)="filterProducts = $event"/> -->
             </div>
         </div>
     </div>
@@ -37,7 +35,7 @@
         <li *ngFor="let product of filterOfProducts ">
             <h4>{{ product.name}}</h4>
             <article>
-                <img [src]="product.image" [title]="product.name | uppercase " [alt]="product.name" />
+                <img [src]="product.image" [title]="product.name | uppercase " [alt]="product.name" [routerLink]="['/products' ,  product.productId]" />
             </article>
             <p class="card-text">
                 {{ product.description }}

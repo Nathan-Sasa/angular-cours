@@ -7,8 +7,6 @@ import { StarRatingComponent } from "../../shared/components/star-rating.compone
 import { ProductServices } from './exr1.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-// import {HttpClient} from '@angular/common/http'
-// HttpClient
 
 
 @Component({

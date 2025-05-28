@@ -4,9 +4,6 @@ main{
     width: 100vw;
     height: auto;
     position: relative;
-    /* overflow-y: scroll; */
-    /* overflow-x: hidden; */
-    /* background: #000; */
 }
 
 main .navbar{
