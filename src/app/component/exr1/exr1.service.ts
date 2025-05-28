@@ -14,12 +14,12 @@ export class ProductServices{
     private readonly PRODUCT_API_URL = 'assets/api/products.json';
 
     constructor(private http: HttpClient){
-        
+
     }
 
     public getProducts(): Observable<IProduct[]>{
         return this.http.get<IProduct[]>(this.PRODUCT_API_URL).pipe(
-            tap(products =>console.log('products:', products)),
+            tap(products =>console.log('products received')),
             catchError(this.handleError)
         )
     }
@@ -34,11 +34,11 @@ export class ProductServices{
             console.error(
                 `Backend returned code ${error.status}` +
                 `Body was : ${error.error}`
-            );   
+            );
         }
         // Return an observable with a user-facing error message
         return throwError(
             'Something bad happened; please try again later.'
-        )    
+        )
     }
 }

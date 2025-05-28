@@ -32,7 +32,7 @@ const routes: Routes = [
 
 export const appConfig: ApplicationConfig = {
     providers: [
-        provideZoneChangeDetection({ eventCoalescing: true }), 
+        provideZoneChangeDetection({ eventCoalescing: true }),
         provideRouter(routes),
         {provide: LOCALE_ID, useValue : 'fr',}
     ]
