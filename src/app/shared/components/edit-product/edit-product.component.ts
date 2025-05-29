@@ -1,16 +1,42 @@
-import { Component, NgModule } from '@angular/core';
-import { Exr1Component } from '../../../component/exr1/exr1.component';
-import { ProductDetailComponent } from '../product-detail/product-detail.component';
-import { NgModel } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-edit-product',
-  imports: [ CommonModule],
+  imports: [ 
+    CommonModule, 
+    FormsModule, 
+    ReactiveFormsModule,
+],
   standalone: true,
   templateUrl: './edit-product.component.html',
   styleUrl: './edit-product.component.css'
 })
-export class EditProductComponent {
 
+export class EditProductComponent implements OnInit {
+
+    public productForm: FormGroup = new FormGroup({});
+
+    constructor(
+        private fb: FormBuilder
+    ) { }
+
+    ngOnInit(): void {
+        
+        this.productForm = this.fb.group({
+            // productId: [''],
+            name: ['', Validators.required],
+            price: ['', Validators.required],
+            description: [''],
+            rating: [''],
+            // imageUrl: [''],
+            // category: [''],
+            // isAvailable: [false]
+        });
+    }
+
+    public saveProduct(): void{
+        console.log(this.productForm.value);
+    }
 }

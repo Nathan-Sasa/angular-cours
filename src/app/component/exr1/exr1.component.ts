@@ -1,12 +1,13 @@
 import { CommonModule, NgFor, NgIf} from '@angular/common';
 import { Component, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 import { IProduct } from './exr1';
 import { ReplaceCommaPipe } from '../../shared/pipes/replace-comma.pipe';
 import { StarRatingComponent } from "../../shared/components/star-rating.component/star-rating/star-rating.component";
 import { ProductServices } from './exr1.service';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 
 
 @Component({

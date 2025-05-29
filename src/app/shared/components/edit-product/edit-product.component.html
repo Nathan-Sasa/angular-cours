@@ -4,69 +4,73 @@
     </div>
 </div>
 <div class="card-body border">
-    <form>
+    <form novalidate [formGroup]="productForm" (ngSubmit)="saveProduct()">
         <div class="from-group row m-3">
-            <label for="name" class="col-md-2 col-form-label">
+            <label for="nameId" class="col-md-2 col-form-label">
                 Nom du produit
             </label>
             <div class="col-md-8">
                 <input
                     type="text"
                     class="form-control"
-                    id="name"
+                    id="nameId"
                     name="name"
+                    formControlName="name"
                     placeholder="Nom (obligatoire)"
                     required
                 />
             </div>
         </div>
         <div class="from-group row m-3">
-            <label for="name" class="col-md-2 col-form-label"> Prix </label>
+            <label for="priceId" class="col-md-2 col-form-label"> Prix </label>
             <div class="col-md-8">
                 <input
                     type="text"
                     class="form-control"
-                    id="price"
+                    id="priceId"
                     name="price"
+                    formControlName="price"
                     placeholder="Prix (obligatoire)"
                     required
                 />
             </div>
         </div>
         <div class="from-group row m-3">
-            <label for="name" class="col-md-2 col-form-label">
+            <label for="ratingId" class="col-md-2 col-form-label">
                 Evaluation (1-5)
             </label>
             <div class="col-md-8">
                 <input
                     type="text"
                     class="form-control"
-                    id="rating"
+                    id="ratingId"
                     name="rating"
+                    formControlName="rating"
                     placeholder="Evalution (1-5)"
                     required
                 />
             </div>
         </div>
         <div class="from-group row m-3">
-            <label for="name" class="col-md-2 col-form-label">
+            <label for="descriptionId" class="col-md-2 col-form-label">
                 Description
             </label>
             <div class="col-md-8">
                 <textarea 
-                    name="description" 
+                    name="descriptionId" 
                     placeholder="Description du produit" 
                     id="description"
+                    formControlName="description"
                     class="form-control"
                 >Description</textarea>
             </div>
         </div>
         <div class="form-group row mb-2">
-            <div class="offset-md-2 col-md-4 d-flex px-5">
+            <div class="offset-md-2 col-md-4 d-flex flex-column flex-sm-row px-5">
                 <button class="btn btn-info" type="submit">
                     <span class="ml-2">Enregistrer</span>
                 </button>
-                <button class="btn-outline-secondary mx-4" type="button">
+                <button class="btn btn-outline-secondary mx-sm-4 my-2 my-sm-0" type="button">
                     Annuler
                 </button>
                 <button class="btn btn-outline-danger" type="button">
@@ -76,3 +80,14 @@
         </div>
     </form>
 </div>
+
+<pre>
+
+    {{ productForm.value | json }}
+    <!-- {{ productForm.status | json }}
+    {{ productForm.valid | json }}
+    {{ productForm.invalid | json }}
+    {{ productForm.touched | json }}
+    {{ productForm.dirty | json }}
+    {{ productForm.pristine | json }} -->
+</pre>
