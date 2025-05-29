@@ -9,3 +9,20 @@ main{
 main .navbar{
     background: cyan;
 }
+ul.navbar-nav li.active{
+    background: #3fc8eef0;
+    color: lightgray;
+    border-radius: 5px;
+}
+ul.navbar-nav li.active:hover{
+    background: #3fc8eef0;
+}
+ul.navbar-nav li:hover{
+    background: #b0deea4f;
+    color: lightgray;
+    border-radius: 5px;
+}
+ul.navbar-nav li{
+    margin-right: 5px;
+    transition: all 0.3s ease-in-out;
+}
