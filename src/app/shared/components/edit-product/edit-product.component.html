@@ -3,7 +3,7 @@
         Ajouter un produit
     </div>
 </div>
-<div class="card-body border">
+<div class="card-body border mb-5">
     <form novalidate [formGroup]="productForm" (ngSubmit)="saveProduct()">
         <div class="from-group row m-3">
             <label for="nameId" class="col-md-2 col-form-label">
@@ -70,7 +70,7 @@
                 <button class="btn btn-info" type="submit">
                     <span class="ml-2">Enregistrer</span>
                 </button>
-                <button class="btn btn-outline-secondary mx-sm-4 my-2 my-sm-0" type="button">
+                <button class="btn btn-outline-secondary mx-sm-4 my-2 my-sm-0" type="button" [routerLink]="['/products']">
                     Annuler
                 </button>
                 <button class="btn btn-outline-danger" type="button">
@@ -81,13 +81,13 @@
     </form>
 </div>
 
-<pre>
+<!-- <pre>
 
     {{ productForm.value | json }}
-    <!-- {{ productForm.status | json }}
+    {{ productForm.status | json }}
     {{ productForm.valid | json }}
     {{ productForm.invalid | json }}
     {{ productForm.touched | json }}
     {{ productForm.dirty | json }}
-    {{ productForm.pristine | json }} -->
-</pre>
+    {{ productForm.pristine | json }}
+</pre> -->

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-edit-product',
@@ -8,6 +9,7 @@ import { CommonModule } from '@angular/common';
     CommonModule, 
     FormsModule, 
     ReactiveFormsModule,
+    RouterModule
 ],
   standalone: true,
   templateUrl: './edit-product.component.html',
