@@ -19,6 +19,9 @@ import { IProduct } from '../../../component/exr1/exr1';
 })
 
 export class EditProductComponent implements OnInit {
+    public alerteFn(): void {
+        alert('cette action n\'est pas encore fonctionnelle !');
+    }
 
     public productForm: FormGroup = new FormGroup({});
 
@@ -95,4 +98,9 @@ export class EditProductComponent implements OnInit {
     public saveProduct(): void{
         console.log(this.productForm.value);
     };
+
+
+
+
+    
 }

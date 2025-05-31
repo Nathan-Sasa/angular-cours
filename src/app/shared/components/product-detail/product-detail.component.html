@@ -45,7 +45,7 @@
                 <span class="material-icons">keyboard_arrow_left</span>
                 <span class="ml-2">Retour à la liste</span>
             </button>
-            <button class="btn btn-outline-info d-flex mx-2" >
+            <button class="btn btn-outline-info d-flex mx-2" [routerLink]="['/products' ,  product.productId, 'edit']">
                 <span class="material-icons">edit</span>
                 <span class="mx-1">Modifier le produit</span>
             </button>
