@@ -46,7 +46,7 @@
             <div class="icon-container d-flex justify-content-between align-items-baseline">
                 <app-star-rating [rating]="product.rating" (starRatingClicked)="receiveRatingClick($event)"></app-star-rating>
 
-                <span class="link-btn material-icons bg-primary text-white p-2 rounded-circle" [routerLink]="['/products' ,  product.productId, 'edit']">
+                <span class="link-btn material-icons bg-secondary  text-white p-2 rounded-circle" [routerLink]="['/products' ,  product.productId, 'edit']">
                     edit
                 </span>
 
