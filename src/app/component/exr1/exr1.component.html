@@ -1,9 +1,7 @@
 <div class="container mt-3">
     <!-- <h3>{{title}}</h3> -->
     <p>
-        Créer un composant qui affiche une liste de produits. Chaque produit
-        doit avoir un nom, une description et un prix. Utiliser des données
-        fictives pour remplir la liste.
+        
     </p>
     <button class="btn btn-primary d-flex" (click)="toggleBadge()" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="material-icons">
@@ -41,7 +39,7 @@
                 {{ product.description }}
             </p>
             <p class="card-text">
-                Prix: {{ product.price | currency : 'EUR': 'symbol': '1.2-2' : 'fr' | replaceComma: '.'}}
+                <!-- Prix: {{ produc.price | currency : 'EUR': 'symbol': '1.2-2' : 'fr' | replaceComma: '.'}} --> 
             </p>
             <div class="icon-container d-flex justify-content-between align-items-baseline">
                 <app-star-rating [rating]="product.rating" (starRatingClicked)="receiveRatingClick($event)"></app-star-rating>

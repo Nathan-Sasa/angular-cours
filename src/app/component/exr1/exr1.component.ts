@@ -91,4 +91,5 @@ export class Exr1Component implements OnInit {
     public receiveRatingClick(message: string): void{
         this.receivedRating = message;
     }
+    
 }

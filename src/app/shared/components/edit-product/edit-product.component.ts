@@ -46,7 +46,7 @@ export class EditProductComponent implements OnInit {
             // category: [''],
             // isAvailable: [false]
         });
-
+    
         this.route.paramMap.subscribe(params => {
             const id = params.get('id');
             
